@@ -24,9 +24,14 @@
 
         socket.emit('mensaje', { nombre: 'Alvaro'});
 
-        socket.on('mensaje', function(payload) {
-            console.log('Escuchando: ', payload.admin);
-        })
+        socket.on('nuevo', function(payload) {
+            console.log('Escuchando: ', payload);
+        });
+
+        socket.on('active-bands', function(bands) {
+            console.clear();
+            console.table(bands);
+        });
     </script>
     
 </body>
